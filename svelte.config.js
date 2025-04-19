@@ -10,6 +10,5 @@ export default {
     paths: {
       base: '/rr-inventory-manager', // important for GitHub Pages
     },
-    trailingSlash: 'never' // <-- This is key
   }
 };
