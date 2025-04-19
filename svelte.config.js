@@ -1,14 +1,20 @@
 import adapter from '@sveltejs/adapter-static';
+import sveltePreprocess from 'svelte-preprocess';
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  preprocess: sveltePreprocess({
+    postcss: true
+  }),
   kit: {
     adapter: adapter({
-      pages: 'build',
-      assets: 'build',
-      fallback: null
+      fallback: '404.html'
     }),
+
     paths: {
       base: '/rr-inventory-manager', // important for GitHub Pages
-    },
+    }
   }
 };
+
+export default config;
